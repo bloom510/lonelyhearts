@@ -33,7 +33,6 @@ export default class Search extends Component {
   }
 
   handleChange(e, field) {
-    console.log('HELLO CAN YOU HEAR ME')
     // Note: Ant Design's dual slider automatically emits values for a given callback, eliminating the need to refer to it via e.target.value
     if(field === 'ageRange') {
       const val = e;
@@ -48,7 +47,7 @@ export default class Search extends Component {
   }
 
   handleSubmit(e) {
-    //e.preventDefault();
+    // e.preventDefault();
       const search = this.state.data.results.filter(i => { 
         if(this.state.gender != 'any') {
               return i.gender === this.state.gender && i.dob.age >= this.state.ageRange[0] && i.dob.age <= this.state.ageRange[1]       
@@ -59,10 +58,10 @@ export default class Search extends Component {
   }
 
   getScreen(init = false) {
-    const initVal = window.innerWidth <= 700 ? true : false;
+    const initVal = window.innerWidth <= 500 ? true : false;
     if(init) return initVal;
     window.addEventListener('resize', () => {
-      this.setState({ isPhone: window.innerWidth <= 700 ? true : false });
+      this.setState({ isPhone: window.innerWidth <= 500 ? true : false });
     })
   }
 
@@ -77,17 +76,22 @@ export default class Search extends Component {
 
           <Row>
           <Col md={12} sm={12} xs={12}>
-            <AgePicker ageRange={this.state.ageRange} orientation={isPhone} handleChange={this.handleChange} />
+            <AgePicker 
+            ageRange={this.state.ageRange} 
+            orientation={isPhone} 
+            handleChange={this.handleChange} />
           </Col>
          
 
           <Col md={12} sm={12} xs={12}>
             <GenderPicker value={this.state.gender} handleChange={this.handleChange}  />
           </Col>  
-          <Row>
-          <FormActions width={100} disabled={this.state.loading} handleReset={this.handleReset} handleSubmit={this.handleSubmit} />
+        
+          <Col md={12} sm={12}>
+            <FormActions width={100} disabled={this.state.loading} handleReset={this.handleReset} handleSubmit={this.handleSubmit} />
+          </Col>
           </Row>
-          </Row>
+
      
          
           </form>

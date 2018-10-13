@@ -58,7 +58,7 @@ export default class Results extends Component {
                   </div>
                 }
                 key={n} 
-                style={{width: isPhone ? 300 : 600, ...resultsStyle.card}} 
+                style={{width: isPhone ? 200 : 600, ...resultsStyle.card}} 
                 loading={loading} />
             )})
           }
