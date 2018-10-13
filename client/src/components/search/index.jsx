@@ -62,7 +62,7 @@ export default class Search extends Component {
     const initVal = window.innerWidth <= 700 ? true : false;
     if(init) return initVal;
     window.addEventListener('resize', () => {
-      this.setState({ isPhone: window.innerWidth <= 411 ? true : false });
+      this.setState({ isPhone: window.innerWidth <= 700 ? true : false });
     })
   }
 
