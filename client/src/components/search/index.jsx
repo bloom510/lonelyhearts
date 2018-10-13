@@ -33,6 +33,7 @@ export default class Search extends Component {
   }
 
   handleChange(e, field) {
+    console.log('HELLO CAN YOU HEAR ME')
     // Note: Ant Design's dual slider automatically emits values for a given callback, eliminating the need to refer to it via e.target.value
     if(field === 'ageRange') {
       const val = e;
@@ -58,7 +59,7 @@ export default class Search extends Component {
   }
 
   getScreen(init = false) {
-    const initVal = window.innerWidth <= 411 ? true : false;
+    const initVal = window.innerWidth <= 700 ? true : false;
     if(init) return initVal;
     window.addEventListener('resize', () => {
       this.setState({ isPhone: window.innerWidth <= 411 ? true : false });
