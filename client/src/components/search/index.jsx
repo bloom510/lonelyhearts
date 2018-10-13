@@ -20,7 +20,6 @@ export default class Search extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleReset = this.handleReset.bind(this);
-    this.getScreen = this.getScreen.bind(this);
 
   }
 
@@ -61,7 +60,8 @@ export default class Search extends Component {
     const initVal = window.innerWidth <= 500 ? true : false;
     if(init) return initVal;
     window.addEventListener('resize', () => {
-      this.setState({ isPhone: window.innerWidth <= 500 ? true : false });
+      console.log(this.state.isPhone)
+      this.setState({ isPhone: () => window.innerWidth <= 500 ? true : false });
     })
   }
 
