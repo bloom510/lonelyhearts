@@ -15,7 +15,7 @@ export default class Search extends Component {
       data: [],
       search: new Array(10).fill(null),
       loading: true,
-      isPhone: this.getScreen(true)
+      isPhone: (() => this.getScreen(true))()
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -60,8 +60,8 @@ export default class Search extends Component {
     const initVal = window.innerWidth <= 500 ? true : false;
     if(init) return initVal;
     window.addEventListener('resize', () => {
-      console.log(this.state.isPhone)
-      this.setState({ isPhone: () => window.innerWidth <= 500 ? true : false });
+      let isPhone = (() => window.innerWidth <= 411 ? true : false)();
+      this.setState({ isPhone });
     })
   }
 
@@ -75,7 +75,7 @@ export default class Search extends Component {
           <form onSubmit={this.handleSubmit}>
 
           <Row>
-          <Col md={12} sm={12} xs={12}>
+          <Col md={9} sm={12} xs={12}>
             <AgePicker 
             ageRange={this.state.ageRange} 
             orientation={isPhone} 
@@ -83,19 +83,19 @@ export default class Search extends Component {
           </Col>
          
 
-          <Col md={12} sm={12} xs={12}>
+          <Col md={9} sm={12} xs={12}>
             <GenderPicker value={this.state.gender} handleChange={this.handleChange}  />
           </Col>  
         
-          <Col md={12} sm={12}>
-            <FormActions width={100} disabled={this.state.loading} handleReset={this.handleReset} handleSubmit={this.handleSubmit} />
+          <Col md={5} sm={12}>
+            <FormActions 
+             isPhone={isPhone}
+             disabled={this.state.loading} 
+             handleReset={this.handleReset} 
+             handleSubmit={this.handleSubmit} />
           </Col>
           </Row>
-
-     
-         
           </form>
-        
         </div>
           <Results loading={this.state.loading} data={this.state.search} isPhone={isPhone} />
       </div>
