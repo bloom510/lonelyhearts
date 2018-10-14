@@ -14,7 +14,7 @@ export const AgePicker = props => {
                   <Slider 
                   className='slider'
                   style={{ height: 200 }}
-                  vertical={orientation}
+                  // vertical={orientation}
                   range 
                   value={ageRange}
                   defaultValue={ageRange} 

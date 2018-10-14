@@ -7,7 +7,7 @@ export const FormActions = props => {
         <div 
         style={
             {
-            marginTop: isPhone ? '40%' : 0,
+            marginLeft: isPhone ? '-100%' : '0',
             }
         }
         >

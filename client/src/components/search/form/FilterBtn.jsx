@@ -7,6 +7,6 @@ export const FilterBtn = props => {
     return(
         <Button 
         icon='search' type='primary' disabled={props.disabled} 
-        style={{marginBottom: isPhone ? '2%' : 0, marginTop: isPhone ? '4%' : 0}} 
+        style={{marginBottom: '2%', marginTop: '2%', marginRight: isPhone ? '5%' : '5%'}} 
         onClick={(e) => props.handleSubmit(e)}>Search</Button>
 )};

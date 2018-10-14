@@ -76,7 +76,7 @@ export default class Search extends Component {
           <form onSubmit={this.handleSubmit}>
 
           <Row>
-          <Col md={9} sm={12} xs={6}>
+          <Col md={9} sm={12} xs={12}>
             <AgePicker 
             ageRange={this.state.ageRange} 
             orientation={isPhone} 
@@ -84,11 +84,10 @@ export default class Search extends Component {
           </Col>
          
 
-          <Col md={9} sm={12} xs={12}>
+          <Col md={9} sm={12} xs={3}>
             <GenderPicker value={this.state.gender} handleChange={this.handleChange}  />
           </Col>  
-        
-          <Col md={5} sm={12}>
+          <Col md={6} sm={12} xs={12}>
             <FormActions 
              isPhone={isPhone}
              disabled={this.state.loading} 
