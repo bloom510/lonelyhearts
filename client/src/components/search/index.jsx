@@ -57,10 +57,11 @@ export default class Search extends Component {
   }
 
   getScreen(init = false) {
-    const initVal = window.innerWidth <= 500 ? true : false;
+    const initVal = window.innerWidth <= 621 ? true : false;
     if(init) return initVal;
     window.addEventListener('resize', () => {
-      let isPhone = (() => window.innerWidth <= 411 ? true : false)();
+      let isPhone = (() => window.innerWidth <= 621 ? true : false)();
+      console.log(isPhone, window.innerWidth)
       this.setState({ isPhone });
     })
   }
@@ -75,7 +76,7 @@ export default class Search extends Component {
           <form onSubmit={this.handleSubmit}>
 
           <Row>
-          <Col md={9} sm={12} xs={12}>
+          <Col md={9} sm={12} xs={6}>
             <AgePicker 
             ageRange={this.state.ageRange} 
             orientation={isPhone} 
