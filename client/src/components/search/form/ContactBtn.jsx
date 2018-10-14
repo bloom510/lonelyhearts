@@ -18,7 +18,7 @@ export const ContactBtn = props => {
         </div>
     );
     return (
-    <Popover content={content} title={`Get in touch with ${name}`} trigger="click">
+    <Popover content={content} title={`Connect with ${name}`} trigger="click">
         <Button style={{marginTop: '3%'}} icon='smile' type='primary' size='large'>Contact Info</Button>    
     </Popover>
     );
