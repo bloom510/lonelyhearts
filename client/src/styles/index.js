@@ -1,5 +1,6 @@
 export const appStyles = {
     header: {
+        position: 'fixed',
         width: '100%', 
         margin: '0 auto 2% auto'
     }
