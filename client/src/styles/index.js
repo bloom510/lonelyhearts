@@ -50,15 +50,6 @@ export const searchStyle = {
     }
 }
 
-export const searchBtnStyles = {
-    marginLeft: '5%',
-    container: {
-        width: '45%',
-        margin: '0 auto 2% 25.5%',
-
-    }
-}
-
 export const resultsStyle = {
     width: '90%', 
     textAlign:'center', 
