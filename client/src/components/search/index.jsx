@@ -25,7 +25,6 @@ export default class Search extends Component {
 
   async componentDidMount() {
     this.getScreen();
-    console.log(this.state)
     let res = await fetch('https://randomuser.me/api/?results=10');
     let data = await res.json();
     this.setState({ data: data, search: data.results, loading: false })

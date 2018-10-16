@@ -15,6 +15,7 @@
     "setup": "yarn install && cd client && yarn install",
     "build": "node internals/scripts/build.js",
     "deploy": "yarn build && yarn checkout",
+    "test": "cd client && yarn test",
     "checkout": "git checkout -b deploy && yarn run add",
     "add": "git add -f client/build && yarn run commit",
     "commit": "git commit -m \"deploy\" && yarn run push",

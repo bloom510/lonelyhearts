@@ -40,6 +40,7 @@ export default class Results extends Component {
               const lastName = this.toNameCase(o.name.last);
               return (
                 <Card 
+                className='results'
                 title={
                   <div>
                     <Avatar size={100} src={o.picture.large} />
